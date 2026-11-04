@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de Currículo</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Formulário -->
+        <section class="form-section">
+        <h1>Gerador de Currículo</h1>
+        <p class="subtitle">Preencha os campos e veja o currículo sendo atualizado em tempo real.</p>
+
+        <div class="input-group">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" placeholder="Nome completo" oninput="atualizarCurriculo()" />
+        </div>
+
+        <div class="input-group">
+            <label for="cargo">Cargo / Área</label>
+            <input type="text" id="cargo" placeholder="Cargo" oninput="atualizarCurriculo()" />
+        </div>
+
+        <div class="row-2col">
+            <div class="input-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="Email" oninput="atualizarCurriculo()" />
+            </div>
+            <div class="input-group">
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" placeholder="Telefone" oninput="atualizarCurriculo()" />
+            </div>
+        </div>
+
+        <div class="row-2col">
+            <div class="input-group">
+            <label for="linkedin">LinkedIn / Portfólio</label>
+            <input type="text" id="linkedin" placeholder="linkedin.com/in/seuperfil" oninput="atualizarCurriculo()" />
+            </div>
+            <div class="input-group">
+            <label for="local">Cidade / Estado</label>
+            <input type="text" id="local" placeholder="Local" oninput="atualizarCurriculo()" />
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="resumo">Resumo profissional</label>
+            <textarea id="resumo" placeholder="Fale brevemente sobre sua experiência e objetivos..." oninput="atualizarCurriculo()"></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="experiencia">Experiência profissional</label>
+            <textarea id="experiencia" placeholder="Empresa - Cargo (período)" style="min-height: 90px;" oninput="atualizarCurriculo()"></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="formacao">Formação acadêmica</label>
+            <textarea id="formacao" placeholder="Curso - Instituição (ano)" oninput="atualizarCurriculo()"></textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="habilidades">Habilidades</label>
+            <textarea id="habilidades" placeholder="Descreva suas habilidades..." oninput="atualizarCurriculo()"></textarea>
+        </div>
+
+        <button class="btn btn-secondary" onclick="limparTudo()">Limpar tudo</button>
+        </section>
+
+        <!-- Prévia -->
+        <section class="preview-section">
+        <div class="preview-header">
+            <h2>Prévia do currículo</h2>
+            <button class="btn-print" onclick="window.print()">🖨️ Imprimir / PDF</button>
+        </div>
+
+        <div class="curriculo">
+            <h2 class="curriculo-nome" id="prevNome">Seu Nome Aqui</h2>
+            <p class="curriculo-cargo" id="prevCargo">Cargo desejado</p>
+
+            <div class="curriculo-contato">
+                <span id="prevEmail">✉️ email@exemplo.com</span>
+                <span id="prevTelefone">📞 (00) 00000-0000</span>
+                <span id="prevLinkedin">🔗 linkedin.com/in/seuperfil</span>
+                <span id="prevLocal">📍 Cidade, Estado</span>
+            </div>
+
+            <div class="curriculo-secao">
+                <h3>Resumo Profissional</h3>
+                <p id="prevResumo" class="placeholder-text">Seu resumo aparecerá aqui.</p>
+            </div>
+
+            <div class="curriculo-secao">
+                <h3>Experiência Profissional</h3>
+                <p id="prevExperiencia" class="placeholder-text">Suas experiências aparecerão aqui.</p>
+            </div>
+
+            <div class="curriculo-secao">
+                <h3>Formação Acadêmica</h3>
+                <p id="prevFormacao" class="placeholder-text">Sua formação aparecerá aqui.</p>
+            </div>
+
+            <div class="curriculo-secao">
+            <h3>Habilidades</h3>
+            <p id="prevHabilidades" class="placeholder-text">Suas habilidades aparecerão aqui.</p>
+            </div>
+        </div>
+        </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

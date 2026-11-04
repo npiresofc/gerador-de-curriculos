@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, #eef2f7 0%, #d9e2ec 100%);
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  color: #1e293b;
+}
+
+.container {
+  max-width: 1150px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.form-section,
+.preview-section {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 1.8rem;
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
+}
+
+.form-section h1 {
+  font-size: 1.7rem;
+  color: #0f172a;
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 1.6rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.8rem;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #334155;
+  margin-bottom: 0.35rem;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 0.7rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #f8fafc;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+  background: #ffffff;
+}
+
+.input-group textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.8rem 1.4rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-top: 0.4rem;
+  font-family: inherit;
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.btn-secondary:hover {
+  background: #cbd5e1;
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 2px dashed #cbd5e1;
+}
+
+.preview-header h2 {
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.btn-print {
+  background: #1e293b;
+  color: white;
+  border: none;
+  padding: 0.55rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+
+.btn-print:hover {
+  background: #0f172a;
+}
+
+.curriculo {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #0f172a;
+  word-break: break-word;
+}
+
+.curriculo-nome {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+
+.curriculo-cargo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3b82f6;
+  margin-bottom: 0.9rem;
+  display: inline-block;
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid #3b82f6;
+}
+
+.curriculo-contato {
+  background: #f1f5f9;
+  padding: 0.8rem 1rem;
+  border-radius: 0.7rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+}
+
+.curriculo-contato span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  word-break: break-word;
+}
+
+.curriculo-secao {
+  margin-bottom: 1.2rem;
+}
+
+.curriculo-secao h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #475569;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.2rem;
+}
+
+.curriculo-secao p {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.placeholder-text {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* Impressão */
+@media print {
+    body {
+        background: #ffffff;
+        padding: 0;
+    }
+  .form-section, .preview-header {
+    display: none !important;
+  }
+  .container {
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 100%;
+  }
+  .preview-section {
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+  }
+  .curriculo-contato {
+    background: #f1f5f9 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 850px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  body {
+    padding: 1rem;
+  }
+  .row-2col {
+    grid-template-columns: 1fr;
+  }
+}
